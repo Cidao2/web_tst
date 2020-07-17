@@ -6,6 +6,7 @@
 	<artifactId>web_tst</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
+
 	<build>
 		<finalName>web_tst</finalName>
 		<plugins>
@@ -29,12 +30,23 @@
 	</build>
 
 	<dependencies>
+	
 		<dependency> <!-- framework testes -->
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+		<dependency><!-- -->
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.14</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+		</dependency>
 
+	</dependencies>
 </project>
