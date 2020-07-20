@@ -27,7 +27,7 @@ public class UsuarioDAO {
 	 * @param Usuario
 	 */
 	public void cadastrar(Usuario x){
-		String sql = "insert into usuario (nome, login, senha) values (?, ? ,? )";
+		String sql = "insert into usuario (nome, login, senha) values (?, ? ,md5(?) )";
 		try (PreparedStatement p =  con.prepareStatement(sql)){
 			p.setString(1, x.getNome());
 			p.setString(2, x.getLogin());
@@ -43,7 +43,7 @@ public class UsuarioDAO {
 	 * @param Usuario
 	 */
 	public void alterar(Usuario x) {
-		String sql = "update usuario set nome =?, login=?, senha=? where id=?";
+		String sql = "update usuario set nome =?, login=?, senha=md5(?) where id=?";
 		try (PreparedStatement p =  con.prepareStatement(sql)){
 			p.setString(1, x.getNome());
 			p.setString(2, x.getLogin());
@@ -141,7 +141,7 @@ public class UsuarioDAO {
 	 */
 	public Usuario autenticar(Usuario xc) {
 		Usuario x = null;
-		String sql = "select * from usuario where login=? and senha=?";
+		String sql = "select * from usuario where login=? and senha=md5(?)";
 		try (PreparedStatement p =  con.prepareStatement(sql)){
 			p.setString(1, xc.getLogin());
 			p.setString(2, xc.getSenha());
