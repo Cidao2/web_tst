@@ -53,7 +53,9 @@ public class UsuarioController extends HttpServlet{
 		if (id!=null) {x.setId(Integer.parseInt(id));}
 		x = xDAO.salvar(x);
 
-		System.out.println("Salvo com sucesso : " + x);
-		resp.getWriter().print("<b>Sucesso</b>");
+		//System.out.println("Salvo com sucesso : " + x);
+		//resp.getWriter().print("<b>Sucesso</b>");
+
+		resp.sendRedirect("usuctrl.do?ac=lst");
 	}
 }

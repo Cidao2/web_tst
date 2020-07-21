@@ -2,51 +2,52 @@ package conexao;
 
 import java.util.List;
 
-import br.com.cidao.web_tst.persistencia.DAO.ProdutoDAO;
-import br.com.cidao.web_tst.persistencia.entitade.Produto;
+import br.com.cidao.web_tst.persistencia.DAO.CidadeDAO;
+import br.com.cidao.web_tst.persistencia.entitade.Cidade;
 
-public class TesteProdutoDAO {
+public class TesteCidadeDAO {
 
-	static ProdutoDAO xDAO = new ProdutoDAO();
+	static CidadeDAO xDAO;
 
 	public static void main(String[] args) {
-		testeCadastrar();
-		//testeAlterar();
+		xDAO = new CidadeDAO();
+
+		//testeCadastrar();
+		testeAlterar();
 		//testeExcluir();
-		//testeBuscarPorId();
+		testeBuscarPorId();
 		testeBuscarTodos();
 	}
 	
 	public static void testeCadastrar() {
-		Produto x = new Produto("nome tst 03", 10.0, 20.0, 30.0, 40.0, 50.0);
+		Cidade x = new Cidade(null, "Belo Horizonte","MG");
 		xDAO.salvar(x);
 		System.out.println("Cadastrado com sucesso=> " + x);
 	}
 
 	public static void testeAlterar() {
-		Produto x = new Produto("nome ALTERADO tst 01", 10.0, 20.0, 30.0, 40.0, 50.0);
-		x.setId(1);
+		Cidade x = new Cidade(1, "Atibaia","SP");
 		xDAO.salvar(x);
 		System.out.println("Alterado com sucesso" + x);
 	}
 	
 	public static void testeExcluir() {
-		Produto x = new Produto();
+		Cidade x = new Cidade();
 		x.setId(1);
 		xDAO.excluir(x);
 		System.out.println("Excluido com sucesso");
 	}
 	
 	public static void testeBuscarPorId() {
-		Produto x = xDAO.buscarPorId(1);
+		Cidade x = xDAO.buscarPorId(1);
 		System.out.println(x);
 	}
 	
 	public static void testeBuscarTodos() {
-		List<Produto> l = xDAO.buscarTodos();
-		for (Produto x : l) {
+		List<Cidade> l = xDAO.buscarTodos();
+		for (Cidade x : l) {
 			System.out.println(x);
 		}
 	}
-	//============  FIM  ==============
+	//=========  FIM  ==========
 }

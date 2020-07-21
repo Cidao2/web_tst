@@ -3,13 +3,14 @@ package br.com.cidao.web_tst.persistencia.entitade;
 public class Cidade {
 	private Integer id;
 	private String nome;
-	private Estado estado;
+	private String uf;
 	/*
 	 * construtor
 	 */
-	public Cidade(String cidade, Estado estado) {
-		this.nome = cidade;
-		this.estado = estado;
+	public Cidade(Integer id, String nome, String uf) {
+		this.id = id;
+		this.nome = nome;
+		this.uf = uf;
 	}
 	public Cidade() {
 	}
@@ -22,20 +23,21 @@ public class Cidade {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getCidade() {
+	public String getNome() {
 		return nome;
 	}
-	public void setCidade(String cidade) {
-		this.nome = cidade;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	public Estado getEstado() {
-		return estado;
+	public String getUf() {
+		return uf;
 	}
-	public void setEstado(Estado estado) {
-		this.estado = estado;
+	public void setUf(String uf) {
+		this.uf = uf;
 	}
 	@Override
 	public String toString() {
-		return "Cidade [id=" + id + ", cidade=" + nome + ", UF=" + estado + "]";
+		return "Cidade [id=" + id + ", nome=" + nome + ", uf=" + uf + "]";
 	}
+
 }

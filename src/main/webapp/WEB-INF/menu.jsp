@@ -7,3 +7,4 @@ Usuario Logado :<%=((Usuario)request.getSession().getAttribute("usuAut")).getNom
 <a href="home.do">Home</a> |
 <a href="usuctrl.do?ac=lst">Usuários</a> |
 <a href="prodctrl.do?ac=lst">Produto</a> |
+<a href="WEB-INF/frmCli.jsp">Cliente</a> |

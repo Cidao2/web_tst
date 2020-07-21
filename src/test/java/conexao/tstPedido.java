@@ -13,7 +13,16 @@ public class tstPedido {
 
 	public static void main(String[] args) {
 
-//Cliente(String nome, String end, Cidade cidade, String email, String cpf, String rg)
+
+		
+		
+		
+		
+		
+		//Cliente(String nome, String end, Cidade cidade, String email, String cpf, String rg)
+
+/*
+ * 		
 		Estado uf = new Estado("São Paulo","Brasil");
 		Cidade cid = new Cidade("Atibaia", uf);
 		Cliente cli = new Cliente("Jão da silva","end",cid,"email","000,000,000-00","999,999");
@@ -34,8 +43,6 @@ public class tstPedido {
 		System.out.println(cli);
 		System.out.println(p1);
 		
+ */
 	}
-
-
-	
 }

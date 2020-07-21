@@ -23,7 +23,7 @@
 	Produto prodb = (Produto) request.getAttribute("prodb");
 	%>
 
-	<form action="usuctrl.do" method="post">
+	<form action="prodctrl.do" method="post">
 		<fieldset>
 			<legend>Cadastrar Usuário</legend>
 			<br>Id		:<input type="number" 	name="id"    		value="<%=prodb.getId()%>">
